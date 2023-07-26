@@ -1,0 +1,28 @@
+1.load the driver
+    -->Class.forName("com.mysql.jdbc.Driver");
+
+2.create a connection 
+    Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/dbname","username","password");
+
+3.create query,statement, preparedStatement,CallableStatement
+    eg->
+        String q="select * from dbname";
+        statement stmt=con.createStatement();
+        ResultSet set=stmt.executeQuery(q);
+
+4.Process the data
+    while(set.next()){
+        int id=set.getInt("studentId");
+        String name=set.getString("name");
+        system.out.println(id);
+        system.out.println(name);
+    }
+
+5.Close the connection
+    con.close();
+
+
+//sql commands
+    ->use youtube
+    ->show tables;
+    ->desc table1;
